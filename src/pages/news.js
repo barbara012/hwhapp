@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import {
-  StyleSheet,
-  ScrollView,
-  View,
-  StatusBar,
-  TouchableOpacity
+  StyleSheet
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { observer } from 'mobx-react/native'

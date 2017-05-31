@@ -20,7 +20,8 @@ export default class News extends Component {
     const list = news.map((article) => {
       return <Article article={article} navigate={navigate} key={article._id} />
     })
-    return <View>
+    return <View style={{paddingTop: 20}}>
+      <StatusBar barStyle='dark-content'/>
       <ScrollView>{list}</ScrollView>
     </View>
   }

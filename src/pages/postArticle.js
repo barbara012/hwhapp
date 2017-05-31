@@ -33,9 +33,9 @@ export default class PostArticle extends Component {
     }
   }
   static navigationOptions = {
-    tabBarLabel: null,
+    tabBarLabel: '.',
     tabBarIcon: (tintColor) => {
-      return <View ><Icon name="genderless" style={styles.postIcon} /></View>
+      return <View ><Icon name="compass" style={styles.postIcon} /></View>
     }
   }
   render() {
