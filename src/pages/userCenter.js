@@ -23,9 +23,17 @@ const Mine = StackNavigator({
 })
 export default class News extends Component {
   static navigationOptions = {
-    tabBarLabel: '我的',
+    tabBarLabel: (tintColor) => {
+      return <Text style={{
+        color: tintColor.focused ? tintColor.tintColor : '#222',
+        textAlign: 'center'
+      }}>发现</Text>
+    },
     tabBarIcon: (tintColor) => {
-      return <Icon name="user-o" style={{ color: tintColor.tintColor, fontSize: 14 }} />
+      return <Icon name="user-o" style={{ 
+        color: tintColor.focused ? tintColor.tintColor : '#222',
+        fontSize: 14 
+      }} />
     }
   }
   render() {

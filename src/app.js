@@ -32,11 +32,12 @@ import UserCenter from './pages/userCenter'
 import PostArticle from './pages/postArticle'
 import Loading from './pages/loading'
 import DefaultInfo from './data/defaultInfo'
-import { TabNavigator } from 'react-navigation'
+import { TabNavigator, TabBarBottom } from 'react-navigation'
 import Uri from './api/index'
 const App = TabNavigator({
   Home: {
-    screen: Posts
+    screen: Posts,
+    tabBarPosition: 'bottom'
   },
   News: {
     screen: News
@@ -51,8 +52,14 @@ const App = TabNavigator({
     screen: UserCenter
   }
 }, {
+  tabBarComponent: TabBarBottom,
+  tabBarPosition: 'bottom',
   tabBarOptions: {
-    activeTintColor: '#0facf3'
+    activeTintColor: '#0facf3',
+    showIcon: true,
+    style: {
+      backgroundColor: '#fff'
+    }
   }
 })
 export default class MyApp extends Component {

@@ -3,6 +3,7 @@ import {
   StyleSheet,
   ScrollView,
   View,
+  Text,
   StatusBar,
   TouchableOpacity
 } from 'react-native'
@@ -19,9 +20,17 @@ const NewsPage = StackNavigator({
 })
 export default class News extends Component {
   static navigationOptions = {
-    tabBarLabel: '发现',
+    tabBarLabel: (tintColor) => {
+      return <Text style={{
+        color: tintColor.focused ? tintColor.tintColor : '#222',
+        textAlign: 'center'
+      }}>发现</Text>
+    },
     tabBarIcon: (tintColor) => {
-      return <Icon name="safari" style={{ color: tintColor.tintColor, fontSize: 14 }} />
+      return <Icon name="safari" style={{ 
+        color: tintColor.focused ? tintColor.tintColor : '#222',
+        fontSize: 14 
+      }} />
     }
   }
   render() {

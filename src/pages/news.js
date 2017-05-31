@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
-  StyleSheet
+  StyleSheet,
+  Text
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { observer } from 'mobx-react/native'
@@ -15,9 +16,17 @@ const NewsPage = StackNavigator({
 })
 export default class News extends Component {
   static navigationOptions = {
-    tabBarLabel: 'IT资讯',
+    tabBarLabel: (tintColor) => {
+      return <Text style={{
+        color: tintColor.focused ? tintColor.tintColor : '#222',
+        textAlign: 'center'
+      }}>IT资讯</Text>
+    },
     tabBarIcon: (tintColor) => {
-      return <Icon name="newspaper-o" style={{ color: tintColor.tintColor, fontSize: 14 }} />
+      return <Icon name="newspaper-o" style={{
+        color: tintColor.focused ? tintColor.tintColor : '#222',
+        fontSize: 14
+      }} />
     }
   }
   render() {

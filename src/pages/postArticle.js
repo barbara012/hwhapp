@@ -10,14 +10,20 @@ const styles = StyleSheet.create({
       flex: 1
     },
     iconWrapper: {
-      width: 40,
-      height: 40,
+      width: 35,
+      height: 35,
+      backgroundColor: '#000',
       borderRadius: 20,
-      alignItems: 'center'
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: 6
     },
     postIcon: {
-      color: '#0facf3',
-      fontSize: 15
+      flex: 1,
+      color: '#fff',
+      fontSize: 20,
+      textAlign: 'center',
+      justifyContent: 'center'
     }
 })
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -33,9 +39,11 @@ export default class PostArticle extends Component {
     }
   }
   static navigationOptions = {
-    tabBarLabel: '.',
+    tabBarLabel: () => {
+      return <Text></Text> 
+    },
     tabBarIcon: (tintColor) => {
-      return <View ><Icon name="compass" style={styles.postIcon} /></View>
+      return <View style={styles.iconWrapper}><Icon name="compass" style={styles.postIcon} /></View>
     }
   }
   render() {
